@@ -1,0 +1,44 @@
+INDEX
+
+D:\Python34\python.exe D:/web-programming/client-server/server.py
+['GET', '/index.html', 'HTTP/1.1\r\nHost:', 'localhost:8000\r\nConnection:', 'keep-alive\r\nCache-Control:', 'max-age=0\r\nUpgrade-Insecure-Requests:', '1\r\nUser-Agent:', 'Mozilla/5.0', '(Windows', 'NT', '6.1;', 'WOW64)', 'AppleWebKit/537.36', '(KHTML,', 'like', 'Gecko)', 'Chrome/53.0.2785.116', 'Safari/537.36\r\nAccept:', 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\r\nAccept-Encoding:', 'gzip,', 'deflate,', 'sdch\r\nAccept-Language:', 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4\r\n\r\n']
+HTTP/1.1 200 OK 
+ Content type:text HTML
+
+
+ <!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+		<title> homework</title>
+	</head>
+
+	<body>
+		<h1>Index</h1>
+		<p> <a href:"http://localhost:8000/about/aboutme.html">absolute link</a> </p>
+		<p> <a href:"about/aboutme.html">relative link </a> </p>
+	</body>
+</html>
+
+____________________________________________________________________
+aboutme
+
+D:\Python34\python.exe D:/web-programming/client-server/server.py
+['GET', '/aboutme.html', 'HTTP/1.1\r\nHost:', 'localhost:8000\r\nConnection:', 'keep-alive\r\nUpgrade-Insecure-Requests:', '1\r\nUser-Agent:', 'Mozilla/5.0', '(Windows', 'NT', '6.1;', 'WOW64)', 'AppleWebKit/537.36', '(KHTML,', 'like', 'Gecko)', 'Chrome/53.0.2785.116', 'Safari/537.36\r\nAccept:', 'text/html,application/xhtml+xml,application/xml;q=0.9,image/webp,*/*;q=0.8\r\nAccept-Encoding:', 'gzip,', 'deflate,', 'sdch\r\nAccept-Language:', 'ru-RU,ru;q=0.8,en-US;q=0.6,en;q=0.4\r\n\r\n']
+HTTP/1.1 200 OK 
+ Content type:text HTML
+
+
+ <!DOCTYPE html>
+<html>
+	<head>
+	<meta charset="utf-8">
+		<title> Homework</title>
+	</head>
+
+	<body>
+		<h1>AboutMe</h1>
+		<p> <a href:"../index.html">relative link</a> </p>
+		<p> <a href:"http://localhost:8000/index.html">absolute link </a> </p>
+	</body>
+</html>
