@@ -1,0 +1,19 @@
+from WSGIMiddleWare import *
+from wsgiref.simple_server import make_server
+
+def App(environ,start_response):
+    status=None
+    responseHeaders = [('Content-type', 'text/html')]
+    path = environ['PATH_INFO']
+    import os
+    if os.path.exists(path):
+        data = open(path).read().encode('utf-8')
+        status = '200 OK'.encode('utf-8')
+    else:
+        status='404 not found'.encode('utf-8')
+        data='not found'.encode('utf-8')
+    start_response(status, responseHeaders)
+    return [data]
+
+app=MiddleWare(App)
+make_server('',8000,app).serve_forever()
