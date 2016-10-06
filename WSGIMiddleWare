@@ -1,0 +1,15 @@
+class MiddleWare:
+    _divTopTag="<div class='top'>Middleware TOP</div>\n"
+    _divBottomTag="<div class='bottom'>Middleware BOTTOM</div>\n"
+    _bodyOpenTag='<body>'
+    _bodyCloseTag='</body>'
+    def __init__(self,app):
+        self.app=app
+    def __call__(self, environ, start_response):
+        page=self.app(environ,start_response)[0].encode('utf-8')
+        if page.find(self._bodyOpenTag)>0:
+            top, bottom = page.split(self._bodyOpenTag)
+            page = top + self._bodyOpenTag+'\n' + self._divTopTag + bottom
+            top, bottom = page.split('</body>')
+            page = top + self._bodyCloseTag + '\n' + self._divBottomTag + bottom
+        return page
